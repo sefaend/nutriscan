@@ -1,43 +1,23 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const NutriScanApp());
-}
+import 'app.dart';
+import 'core/constants/app_config.dart';
+import 'features/auth/data/auth_service.dart';
+import 'features/auth/data/firebase_auth_service.dart';
+import 'features/auth/data/mock_auth_service.dart';
+import 'firebase_options.dart';
 
-class NutriScanApp extends StatelessWidget {
-  const NutriScanApp({super.key});
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'NutriScan',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
-        useMaterial3: true,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('NutriScan'),
-          backgroundColor: Colors.green.shade100,
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                'NutriScan Hoş Geldiniz!',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 16),
-              ElevatedButton(
-                onPressed: () {},
-                child: const Text('Test Butonu'),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
+  final AuthService authService;
+  if (AppConfig.useMockAuth) {
+    authService = MockAuthService();
+  } else {
+    await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+    authService = FirebaseAuthService();
   }
+
+  runApp(NutriScanApp(authService: authService));
 }
