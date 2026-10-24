@@ -46,5 +46,3 @@ app.*.map.json
 
 # Widget Preview related
 .widget_preview/
-serviceAccountKey.json
-openfoodfacts_cleaned_data.csv
