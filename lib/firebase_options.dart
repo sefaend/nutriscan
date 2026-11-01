@@ -58,7 +58,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDWUNfdE4eCEE96pqFhbg6D5OwsOF1_Ays',
-    appId: '1:224726214691:android:acbeafcea9aca5ffc1a996',
+    appId: '1:224726214691:android:a74810116d8eb9cdc1a996',
     messagingSenderId: '224726214691',
     projectId: 'nutriscan-b1158',
     storageBucket: 'nutriscan-b1158.firebasestorage.app',
@@ -66,10 +66,10 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyDXCU3tLhpvQeL8zsru7oUBSMxzOuBuVow',
-    appId: '1:224726214691:ios:ae11aa5290b46c40c1a996',
+    appId: '1:224726214691:ios:4bfad2d1cda01701c1a996',
     messagingSenderId: '224726214691',
     projectId: 'nutriscan-b1158',
     storageBucket: 'nutriscan-b1158.firebasestorage.app',
-    iosBundleId: 'com.example.nutriscanApp',
+    iosBundleId: 'com.example.nutriScan',
   );
 }

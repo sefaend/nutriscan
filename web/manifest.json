@@ -1,6 +1,6 @@
 {
-    "name": "nutriscan_app",
-    "short_name": "nutriscan_app",
+    "name": "nutri_scan",
+    "short_name": "nutri_scan",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

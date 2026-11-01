@@ -1,34 +1,17 @@
-# NutriScan
+# nutri_scan
 
-A mobile app that lets users scan a food product's barcode and instantly
-see its allergens, harmful ingredients, and beneficial nutritional traits.
+A new Flutter project.
 
-## Tech stack
-- Flutter (Dart)
-- Barcode scanning: `mobile_scanner`
-- Food data: external food database API (e.g., Open Food Facts)
-- Local storage: `shared_preferences` (user allergy/preference profile)
+## Getting Started
 
-## Getting started
-1. Install the [Flutter SDK](https://docs.flutter.dev/get-started/install).
-2. Clone this repo and run:
-   ```bash
-   flutter pub get
-   flutter run
-   ```
-3. See `CONTRIBUTING.md` before pushing any code.
+This project is a starting point for a Flutter application.
 
-## Project structure
-```
-lib/
-  main.dart          # app entry point
-  app.dart           # MaterialApp + routes
-  core/               # theme, constants, shared config
-  models/             # data models (Product, UserProfile)
-  screens/            # one file per screen
-  services/           # API calls, barcode scanning, storage
-  widgets/            # reusable UI components
-```
+A few resources to get you started if this is your first Flutter project:
 
-## Team
-See the M0 Project Selection Report for team roles and responsibilities.
+- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
+- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
