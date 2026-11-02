@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:nutri_scan/features/app.dart';
 import 'package:nutri_scan/features/auth/login_screen.dart';
 import 'package:nutri_scan/features/auth/signup_screen.dart';
+import 'package:nutri_scan/features/product/product_screen.dart';
 import 'package:nutri_scan/features/profile/profile_screen.dart';
 import 'package:nutri_scan/features/scanner/scanner_screen.dart';
 
@@ -18,6 +19,7 @@ class AppRoutes {
   static const String profile = "/profile";
   static const String login = "/login";
   static const String signup = "/signup";
+  static const String product = "/product/:barcode";
 }
 
 final router = GoRouter(
@@ -33,6 +35,12 @@ final router = GoRouter(
       parentNavigatorKey: _rooterKey,
       path: AppRoutes.signup,
       builder: (context, state) => const SignupScreen(),
+    ),
+    GoRoute(
+      parentNavigatorKey: _rooterKey,
+      path: AppRoutes.product,
+      builder: (context, state) =>
+          ProductScreen(barcode: state.pathParameters['barcode']!),
     ),
     StatefulShellRoute.indexedStack(
       builder: (context, state, navigationShell) =>
