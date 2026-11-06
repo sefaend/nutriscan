@@ -27,6 +27,8 @@ class AuthRepository {
       email: email,
     );
   }
+
+  Future<void> signOut() => _auth.signOut();
 }
 
 final authRepositoryProvider = Provider<AuthRepository>(

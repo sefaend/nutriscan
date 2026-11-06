@@ -51,9 +51,9 @@ class _LoginScreenState extends State<LoginScreen> {
     try {
       await _authService.login(email: email, password: password);
 
-      _showSnack('Successfully Login!!', isError: false);
+      _showSnack('Successfully Logged In!!', isError: false);
 
-      if (mounted && context.canPop()) {
+      if (mounted) {
         context.go(AppRoutes.home);
       }
     } catch (e) {
@@ -261,8 +261,30 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ],
                               ),
                             ),
-
-                            const SizedBox(height: 28),
+                            const SizedBox(height: 12),
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: GestureDetector(
+                                onTap: () =>
+                                    context.push(AppRoutes.forgotPassword),
+                                child: Text(
+                                  'Forgot Password?',
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w600,
+                                    fontStyle: FontStyle.italic,
+                                    decoration: TextDecoration.underline,
+                                    decorationColor: Theme.of(context)
+                                        .colorScheme
+                                        .primary,
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .primary,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 16),
                             Align(
                               alignment: Alignment.centerRight,
                               child: GestureDetector(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nutri_scan/features/app.dart';
+import 'package:nutri_scan/features/auth/forget_password_screen.dart';
 import 'package:nutri_scan/features/auth/login_screen.dart';
 import 'package:nutri_scan/features/auth/signup_screen.dart';
 import 'package:nutri_scan/features/product/product_screen.dart';
@@ -19,6 +20,7 @@ class AppRoutes {
   static const String profile = "/profile";
   static const String login = "/login";
   static const String signup = "/signup";
+  static const String forgotPassword = '/forgot-password';
   static const String product = "/product/:barcode";
 }
 
@@ -35,6 +37,10 @@ final router = GoRouter(
       parentNavigatorKey: _rooterKey,
       path: AppRoutes.signup,
       builder: (context, state) => const SignupScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.forgotPassword,
+      builder: (context, state) => const ForgotPasswordScreen(),
     ),
     GoRoute(
       parentNavigatorKey: _rooterKey,
